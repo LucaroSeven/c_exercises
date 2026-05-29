@@ -1,0 +1,50 @@
+[
+  {
+    "file": "1_hello_world.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c11",
+      "-g",
+      "1_hello_world.c",
+      "-o",
+      "build/1_hello_world"
+    ],
+    "directory": "/home/lucaro/Desktop/hermes",
+    "output": "build/1_hello_world"
+  },
+  {
+    "file": "2_sum_two_numbers.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c11",
+      "-g",
+      "2_sum_two_numbers.c",
+      "-o",
+      "build/2_sum_two_numbers"
+    ],
+    "directory": "/home/lucaro/Desktop/hermes",
+    "output": "build/2_sum_two_numbers"
+  },
+  {
+    "file": "3_compare_str_without_strcpy.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c11",
+      "-g",
+      "3_compare_str_without_strcpy.c",
+      "-o",
+      "build/3_compare_str_without_strcpy"
+    ],
+    "directory": "/home/lucaro/Desktop/hermes",
+    "output": "build/3_compare_str_without_strcpy"
+  }
+]

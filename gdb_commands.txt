@@ -1,0 +1,272 @@
+Useful GDB Commands for C Debugging
+===================================
+
+Start GDB
+---------
+gdb ./build/program_name
+    Starts GDB with a compiled program.
+
+Example:
+gdb ./build/1_hello_world
+
+
+Run the program
+---------------
+run
+r
+    Runs the program from the beginning.
+
+
+Run with arguments
+------------------
+run arg1 arg2
+r arg1 arg2
+    Runs the program and passes command-line arguments to it.
+
+Example:
+run input.txt output.txt
+
+
+Set a breakpoint at a function
+------------------------------
+break main
+b main
+    Pauses the program when it reaches the main function.
+
+
+Set a breakpoint at a line number
+---------------------------------
+break 10
+b 10
+    Pauses the program when it reaches line 10 of the current file.
+
+
+Set a breakpoint at a specific file and line
+--------------------------------------------
+break file.c:10
+b file.c:10
+    Pauses the program at line 10 in file.c.
+
+Example:
+break 1_hello_world.c:4
+
+
+Show breakpoints
+----------------
+info breakpoints
+info b
+    Shows all active breakpoints.
+
+
+Delete a breakpoint
+-------------------
+delete 1
+d 1
+    Deletes breakpoint number 1.
+
+Use info breakpoints to see breakpoint numbers.
+
+
+Run until next line
+-------------------
+next
+n
+    Executes the next line of code.
+    If the line calls a function, GDB runs the whole function without entering it.
+
+
+Step into a function
+--------------------
+step
+s
+    Executes the next line of code.
+    If the line calls a function, GDB enters that function.
+
+
+Continue running
+----------------
+continue
+c
+    Continues running the program until the next breakpoint, crash, or program end.
+
+
+Print a variable
+----------------
+print variable_name
+p variable_name
+    Shows the current value of a variable.
+
+Example:
+print x
+p x
+
+
+Print an expression
+-------------------
+print x + y
+p x + y
+    Evaluates and prints an expression.
+
+
+Watch a variable
+----------------
+watch variable_name
+    Pauses the program whenever the variable changes.
+
+Example:
+watch counter
+
+
+Show local variables
+--------------------
+info locals
+    Shows variables in the current function.
+
+
+Show function arguments
+-----------------------
+info args
+    Shows the arguments passed to the current function.
+
+
+Show source code
+----------------
+list
+l
+    Shows source code around the current line.
+
+
+Show source code around a function
+----------------------------------
+list main
+l main
+    Shows source code around the main function.
+
+
+Show where you are
+------------------
+where
+backtrace
+bt
+    Shows the call stack.
+    This is very useful when the program crashes.
+
+
+Move up the call stack
+----------------------
+up
+    Moves to the function that called the current function.
+
+
+Move down the call stack
+------------------------
+down
+    Moves back down the call stack.
+
+
+Show registers
+--------------
+info registers
+    Shows CPU register values.
+    This is more advanced and useful later.
+
+
+Examine memory
+--------------
+x ADDRESS
+    Examines memory at an address.
+
+Example:
+x &x
+    Shows memory at the address of variable x.
+
+
+Examine memory with format
+--------------------------
+x/4x ADDRESS
+    Shows 4 values in hexadecimal from ADDRESS.
+
+x/4d ADDRESS
+    Shows 4 values in decimal from ADDRESS.
+
+x/s ADDRESS
+    Shows a string from ADDRESS.
+
+
+Set a variable value
+--------------------
+set variable x = 10
+    Changes the value of a variable while debugging.
+
+Example:
+set variable counter = 0
+
+
+Restart the program
+-------------------
+run
+r
+    If the program already ran, GDB asks if you want to start it again.
+
+
+Stop the running program
+------------------------
+Ctrl+C
+    Interrupts the program and returns control to GDB.
+
+
+Quit GDB
+--------
+quit
+q
+    Exits GDB.
+
+
+Beginner Debugging Workflow
+===========================
+
+1. Compile your program:
+
+   make
+
+2. Start GDB:
+
+   gdb ./build/1_hello_world
+
+3. Set a breakpoint:
+
+   break main
+
+4. Run the program:
+
+   run
+
+5. Move line by line:
+
+   next
+
+6. Print variables:
+
+   print variable_name
+
+7. If the program crashes, check the call stack:
+
+   backtrace
+
+8. Quit GDB:
+
+   quit
+
+
+Most Important Commands to Memorize
+===================================
+
+break main      - pause at main
+run             - start the program
+next            - run the next line
+step            - enter a function
+print x         - show variable x
+continue        - keep running
+backtrace       - show where the program crashed
+list            - show source code
+quit            - exit GDB
